@@ -58,9 +58,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
 });
 
-
-
-
 Route::get('password/reset/{token}', PasswordResetComponent::class)->name('password.reset');
 
 Route::get('/clear', function () {
@@ -81,4 +78,11 @@ Route::get('/clear', function () {
     Artisan::call('auth:clear-resets');
 
     return 'Log contents cleared, and caches have been cleared and optimized!';
+});
+Route::get('/Privacy&Policy', function () {
+    return view('privacy_poliy_view');
+});
+
+Route::get('/Terms&Services', function () {
+    return view('terms_services_view');
 });
